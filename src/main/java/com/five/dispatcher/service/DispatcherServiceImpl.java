@@ -23,7 +23,9 @@ public class DispatcherServiceImpl implements DispatcherService {
         if (servers == null||servers.isEmpty()) {
             return  new Message(0, "无可用服务器");
         }
-        return new Message(1, servers.get(circleSchedule(pos, servers.size())));
+        int next = circleSchedule(pos, servers.size());
+        pos = next;
+        return new Message(1, servers.get(next));
     }
 
     private int circleSchedule(int cur, int max) {
