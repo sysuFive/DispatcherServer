@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: dispatcher
+server:
+  port: 11000
+
+my:
+  servers:
+    - 172.18.69.88:8000
